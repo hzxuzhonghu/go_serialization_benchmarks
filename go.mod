@@ -15,7 +15,7 @@ require (
 	github.com/glycerine/go-capnproto v0.0.0-20190118050403-2d07de3aa7fc
 	github.com/glycerine/rbtree v0.0.0-20190406191118-ceb71889d809 // indirect
 	github.com/gogo/protobuf v1.3.2
-	github.com/golang/protobuf v1.3.2
+	github.com/golang/protobuf v1.5.2
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/google/flatbuffers v1.11.0
 	github.com/gorilla/websocket v1.4.1 // indirect

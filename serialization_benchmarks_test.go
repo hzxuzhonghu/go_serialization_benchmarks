@@ -832,11 +832,13 @@ func Benchmark_Golangprotobuf_Marshal(b *testing.B) {
 	b.ResetTimer()
 	var serialSize int
 	for i := 0; i < b.N; i++ {
-		bytes, err := goproto.Marshal(data[rand.Intn(len(data))])
+		buf := goproto.NewBuffer(nil)
+		buf.SetDeterministic(true)
+		err := buf.Marshal(data[rand.Intn(len(data))])
 		if err != nil {
 			b.Fatal(err)
 		}
-		serialSize += len(bytes)
+		serialSize += len(buf.Bytes())
 	}
 	b.ReportMetric(float64(serialSize)/float64(b.N), "B/serial")
 }
