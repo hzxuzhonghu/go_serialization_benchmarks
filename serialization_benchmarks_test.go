@@ -30,6 +30,7 @@ import (
 	shamatongen "github.com/shamaton/msgpackgen/msgpack"
 	"github.com/tinylib/msgp/msgp"
 	"github.com/ugorji/go/codec"
+	goproto "github.com/golang/protobuf/proto"
 	fastjson "github.com/valyala/fastjson"
 	vmihailenco "github.com/vmihailenco/msgpack/v4"
 	"go.dedis.ch/protobuf"
@@ -823,6 +824,21 @@ func generateProto() []*ProtoBufA {
 		})
 	}
 	return a
+}
+
+func Benchmark_Golangprotobuf_Marshal(b *testing.B) {
+	data := generateProto()
+	b.ReportAllocs()
+	b.ResetTimer()
+	var serialSize int
+	for i := 0; i < b.N; i++ {
+		bytes, err := goproto.Marshal(data[rand.Intn(len(data))])
+		if err != nil {
+			b.Fatal(err)
+		}
+		serialSize += len(bytes)
+	}
+	b.ReportMetric(float64(serialSize)/float64(b.N), "B/serial")
 }
 
 func Benchmark_Goprotobuf_Marshal(b *testing.B) {

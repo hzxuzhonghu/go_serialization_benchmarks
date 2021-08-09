@@ -14,7 +14,7 @@ require (
 	github.com/davecgh/go-xdr v0.0.0-20161123171359-e6a2ba005892
 	github.com/glycerine/go-capnproto v0.0.0-20190118050403-2d07de3aa7fc
 	github.com/glycerine/rbtree v0.0.0-20190406191118-ceb71889d809 // indirect
-	github.com/gogo/protobuf v1.2.1
+	github.com/gogo/protobuf v1.3.2
 	github.com/golang/protobuf v1.3.2
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/google/flatbuffers v1.11.0
@@ -44,7 +44,7 @@ require (
 	github.com/ugorji/go/codec v1.1.7
 	github.com/valyala/fastjson v1.6.3
 	github.com/vmihailenco/msgpack/v4 v4.3.0
-	github.com/ymz-ncnk/musgo v0.1.6 // indirect
+	github.com/ymz-ncnk/musgo v0.1.6
 	go.dedis.ch/protobuf v1.0.6
 	golang.org/x/sys v0.0.0-20210616094352-59db8d763f22 // indirect
 	golang.org/x/tools v0.1.3 // indirect
